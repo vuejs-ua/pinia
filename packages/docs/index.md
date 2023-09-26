@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: Початок
-      link: /uk/introduction
+      link: /introduction
     - theme: alt
       text: Демо
       link: https://stackblitz.com/github/piniajs/example-vue-3-vite
