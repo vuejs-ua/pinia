@@ -1,8 +1,8 @@
-# VS Code Snippets
+# Фрагменти для VS Code
 
-These are some snippets that I use in VS Code to make my life easier.
+Це деякі фрагменти, які я використовую в VS Code, щоб полегшити собі життя.
 
-Manage user snippets with <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>P</kbd> / <kbd>⇧</kbd> <kbd>⌃</kbd> <kbd>P</kbd> and then `Snippets: Configure User Snippets`.
+Керуйте фрагментами користувача за допомогою <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>P</kbd> / <kbd>⇧</kbd> <kbd>⌃</kbd> <kbd>P</kbd>, а потім `Фрагменти: налаштувати фрагменти користувача`.
 
 ```json
 {
@@ -25,7 +25,7 @@ Manage user snippets with <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>P</kbd> / <kbd>⇧<
       "}",
       ""
     ],
-    "description": "Bootstrap the code needed for a Vue.js Pinia Options Store file"
+    "description": "Завантаження коду, необхідного для файлу Vue.js Pinia Options Store"
   },
   "Pinia Setup Store Boilerplate": {
     "scope": "javascript,typescript",
@@ -43,7 +43,7 @@ Manage user snippets with <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>P</kbd> / <kbd>⇧<
       "}",
       ""
     ],
-    "description": "Bootstrap the code needed for a Vue.js Pinia Setup Store file"
+    "description": "Завантаження коду, необхідного для файлу Vue.js Pinia Setup Store"
   }
 }
 ```

@@ -24,7 +24,7 @@ Properties of a store.
 
 ## Properties
 
-### $id
+### $id %{#Properties-$id}%
 
 • **$id**: `Id`
 
@@ -32,7 +32,7 @@ Unique identifier of the store
 
 ___
 
-### \_customProperties
+### \_customProperties %{#Properties-\_customProperties}%
 
 • **\_customProperties**: `Set`<`string`\>
 

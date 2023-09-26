@@ -7,7 +7,7 @@ export default defineConfig({
 
   locales: {
     root: { label: 'Українська',
-      lang: 'uk-UA',
+      lang: 'uk',
       link: '/',
       ...ukConfig
     },

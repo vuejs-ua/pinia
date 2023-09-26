@@ -1,17 +1,17 @@
 # Nuxt.js
 
-Using Pinia with [Nuxt](https://nuxt.com/) is easier since Nuxt takes care of a lot of things when it comes to _server side rendering_. For instance, **you don't need to care about serialization nor XSS attacks**. Pinia supports Nuxt Bridge and Nuxt 3. For bare Nuxt 2 support, [see below](#nuxt-2-without-bridge).
+Використовувати Pinia з [Nuxt](https://nuxt.com/) легше, оскільки Nuxt піклується про багато речей, коли йдеться про _відтворення на стороні сервера_. Наприклад, **вам не потрібно піклуватися ні про серіалізацію, ні про атаки XSS**. Pinia підтримує Nuxt Bridge і Nuxt 3. Про підтримку Nuxt 2 [дивіться нижче](#nuxt-2-without-bridge).
 
-## Installation
+## Встановлення
 
 ```bash
 yarn add pinia @pinia/nuxt
-# or with npm
+# або з npm
 npm install pinia @pinia/nuxt
 ```
 
 :::tip
-If you're using npm, you might encounter an _ERESOLVE unable to resolve dependency tree_ error. In that case, add the following to your `package.json`:
+Якщо ви використовуєте npm, ви можете зіткнутися з помилкою _ERESOLVE неможливо розкласти дерево залежностей_. У такому випадку додайте наступне до свого `package.json`:
 
 ```js
 "overrides": {
@@ -21,12 +21,12 @@ If you're using npm, you might encounter an _ERESOLVE unable to resolve dependen
 
 :::
 
-We supply a _module_ to handle everything for you, you only need to add it to `modules` in your `nuxt.config.js` file:
+Ми надаємо _module_ , щоб обробляти все для вас, вам потрібно лише додати його до `modules` у вашому файлі `nuxt.config.js`:
 
 ```js
 // nuxt.config.js
 export default defineNuxtConfig({
-  // ... other options
+  // ... інші налаштування
   modules: [
     // ...
     '@pinia/nuxt',
@@ -34,11 +34,11 @@ export default defineNuxtConfig({
 })
 ```
 
-And that's it, use your store as usual!
+І все, використовуйте своє сховище як завжди!
 
-## Using the store outside of `setup()`
+## Використання сховища за межами `setup()`
 
-If you want to use a store outside of `setup()`, remember to pass the `pinia` object to `useStore()`. We added it to [the context](https://nuxtjs.org/docs/2.x/internals-glossary/context) so you have access to it in `asyncData()` and `fetch()`:
+Якщо ви хочете використовувати сховище за межами `setup()`, не забудьте передати об'єкт `pinia` в `useStore()`. Ми додали його до [контексту](https://nuxtjs.org/docs/2.x/internals-glossary/context) щоб ви мали доступ до нього в `asyncData()` і `fetch()`:
 
 ```js
 import { useStore } from '~/stores/myStore'
@@ -50,7 +50,7 @@ export default {
 }
 ```
 
-As with `onServerPrefetch()`, you don't need to do anything special if you want to call a store action within `asyncData()`:
+Як і у випадку з `onServerPrefetch()`, вам не потрібно робити нічого спеціального, якщо ви хочете викликати дію сховища в `asyncData()`:
 
 ```vue
 <script setup>
@@ -59,18 +59,18 @@ const { data } = await useAsyncData('user', () => store.fetchUser())
 </script>
 ```
 
-## Auto imports
+## Автоматичні імпортування
 
-By default `@pinia/nuxt` exposes one single auto import: `usePinia()`, which is similar to `getActivePinia()` but works better with Nuxt. You can add auto imports to make your life easier:
+За умовчанням `@pinia/nuxt` надає один автоматичний імпорт: `usePinia()`, який схожий на `getActivePinia()`, але краще працює з Nuxt. Ви можете додати автоматичний імпорт, щоб полегшити ваше життя:
 
 ```js
 // nuxt.config.js
 export default defineNuxtConfig({
-  // ... other options
+  // ... інші налаштування
   modules: ['@pinia/nuxt'],
   pinia: {
     autoImports: [
-      // automatically imports `defineStore`
+      // автоматично імпортує `defineStore`
       'defineStore', // import { defineStore } from 'pinia'
       ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
     ],
@@ -78,24 +78,24 @@ export default defineNuxtConfig({
 })
 ```
 
-## Nuxt 2 without bridge
+## Nuxt 2 без моста
 
-Pinia supports Nuxt 2 until `@pinia/nuxt` v0.2.1. Make sure to also install [`@nuxtjs/composition-api`](https://composition-api.nuxtjs.org/) alongside `pinia`:
+Pinia підтримує Nuxt 2 до `@pinia/nuxt` v0.2.1. Переконайтеся, що також встановлено [`@nuxtjs/composition-api`](https://composition-api.nuxtjs.org/) разом із `pinia`:
 
 ```bash
 yarn add pinia @pinia/nuxt@0.2.1 @nuxtjs/composition-api
-# or with npm
+# або з npm
 npm install pinia @pinia/nuxt@0.2.1 @nuxtjs/composition-api
 ```
 
-We supply a _module_ to handle everything for you, you only need to add it to `buildModules` in your `nuxt.config.js` file:
+Ми надаємо _module_, щоб обробляти все для вас, вам потрібно лише додати його до `buildModules` у вашому файлі `nuxt.config.js`:
 
 ```js
 // nuxt.config.js
 export default {
-  // ... other options
+  // ... інші налаштування
   buildModules: [
-    // Nuxt 2 only:
+    // Тільки для Nuxt 2:
     // https://composition-api.nuxtjs.org/getting-started/setup#quick-start
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
@@ -105,7 +105,7 @@ export default {
 
 ### TypeScript
 
-If you are using Nuxt 2 (`@pinia/nuxt` < 0.3.0) with TypeScript or have a `jsconfig.json`, you should also add the types for `context.pinia`:
+Якщо ви використовуєте Nuxt 2 (`@pinia/nuxt` < 0.3.0) з TypeScript або маєте `jsconfig.json`, вам треба також додати типи для `context.pinia`:
 
 ```json
 {
@@ -116,11 +116,11 @@ If you are using Nuxt 2 (`@pinia/nuxt` < 0.3.0) with TypeScript or have a `jscon
 }
 ```
 
-This will also ensure you have autocompletion 😉 .
+Це також забезпечить автозавершення для вас 😉 .
 
-### Using Pinia alongside Vuex
+### Використання Pinia разом з Vuex
 
-It is recommended to **avoid using both Pinia and Vuex** but if you need to use both, you need to tell pinia to not disable it:
+Рекомендується **уникати використання Pinia та Vuex водночас**, але якщо вам потрібно використовувати обидва, вам потрібно сказати pinia не вимикати його:
 
 ```js
 // nuxt.config.js
@@ -129,6 +129,6 @@ export default {
     '@nuxtjs/composition-api/module',
     ['@pinia/nuxt', { disableVuex: false }],
   ],
-  // ... other options
+  // ... інші налаштування
 }
 ```

@@ -2,11 +2,11 @@
 editLink: false
 ---
 
-API Documentation
+Документація API
 
-# API Documentation
+# Документація API
 
-## Modules
+## Модулі
 
 - [@pinia/nuxt](modules/pinia_nuxt.md)
 - [@pinia/testing](modules/pinia_testing.md)
