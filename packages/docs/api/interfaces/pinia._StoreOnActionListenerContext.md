@@ -2,44 +2,43 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / \_StoreOnActionListenerContext
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / \_StoreOnActionListenerContext
 
-# Interface: \_StoreOnActionListenerContext<Store, ActionName, A\>
+# Інтерфейс: \_StoreOnActionListenerContext<Store, ActionName, A\>
 
 [pinia](../modules/pinia.md)._StoreOnActionListenerContext
 
-Actual type for [StoreOnActionListenerContext](../modules/pinia.md#storeonactionlistenercontext). Exists for refactoring
-purposes. For internal use only.
-For internal use **only**
+Актуальний тип для [StoreOnActionListenerContext](../modules/pinia.md#storeonactionlistenercontext). Використовується для рефакторингу.
+**Лише** для внутрішнього використання
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Store` | `Store` |
 | `ActionName` | extends `string` |
 | `A` | `A` |
 
-## Properties
+## Властивості
 
 ### after
 
 • **after**: (`callback`: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void`) => `void`
 
-#### Type declaration
+#### Оголошення типу
 
 ▸ (`callback`): `void`
 
-Sets up a hook once the action is finished. It receives the return value
-of the action, if it's a Promise, it will be unwrapped.
+Створює хук після завершення дії. Він отримує значення, яке 
+повертається в дії. Якщо це Promise, то він буде розгорнутий.
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `callback` | `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void` |
 
-##### Returns
+##### Повертає
 
 `void`
 
@@ -49,7 +48,7 @@ ___
 
 • **args**: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? `Parameters`<`A`[`ActionName`]\> : `unknown`[]
 
-Parameters passed to the action
+Параметри, що передаються в дію
 
 ___
 
@@ -57,7 +56,7 @@ ___
 
 • **name**: `ActionName`
 
-Name of the action
+Назва дії
 
 ___
 
@@ -65,20 +64,20 @@ ___
 
 • **onError**: (`callback`: (`error`: `unknown`) => `void`) => `void`
 
-#### Type declaration
+#### Оголошення типу
 
 ▸ (`callback`): `void`
 
-Sets up a hook if the action fails. Return `false` to catch the error and
-stop it from propagating.
+Створює хук, якщо дія завершиться невдало. Повертає `false`, щоб
+перехопити помилку і зупинити її поширення.
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `callback` | (`error`: `unknown`) => `void` |
 
-##### Returns
+##### Повертає
 
 `void`
 
@@ -88,4 +87,4 @@ ___
 
 • **store**: `Store`
 
-Store that is invoking the action
+Сховище, яке викликає дію
