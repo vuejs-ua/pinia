@@ -88,7 +88,7 @@ store.count++
 
 ## Скидання стану
 
-В [опційних сховищах](/uk/core-concepts/index.md#option-stores) ви можете _обнулити_ стан до початкового значення, викликавши метод `$reset()`:
+В [опційних сховищах](/core-concepts/index.md#option-stores) ви можете _обнулити_ стан до початкового значення, викликавши метод `$reset()`:
 
 ```js
 const store = useStore()
@@ -98,7 +98,7 @@ store.$reset()
 
 Внутрішньо це викликає функцію `state()` для створення нового об'єкта стану і замінює ним поточний стан.
 
-У [setup сховищах](/uk/core-concepts/index.md#setup-stores) вам потрібно створити власний метод `$reset()`:
+У [setup сховищах](/core-concepts/index.md#setup-stores) вам потрібно створити власний метод `$reset()`:
 
 ```ts
 export const useCounterStore = defineStore('counter', () => {
