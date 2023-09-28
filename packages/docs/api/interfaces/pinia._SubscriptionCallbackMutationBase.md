@@ -27,7 +27,7 @@ editLink: false
 • `Опціональні` **events**: `DebuggerEvent` \| `DebuggerEvent`[]
 
 🔴 ТІЛЬКИ ДЛЯ РОЗРОБКИ, НЕ ВИКОРИСТОВУВАТИ для виробничого коду. Різні виклики змін. Походить від
-https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging і дозволяє відстежувати зміни в
+https://ua.vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging і дозволяє відстежувати зміни в
 devtools та плагінах **тільки під час розробки**.
 
 ___
