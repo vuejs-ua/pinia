@@ -2,40 +2,41 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineSetupStoreOptions
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / DefineSetupStoreOptions
 
-# Interface: DefineSetupStoreOptions<Id, S, G, A\>
+# Інтерфейс: DefineSetupStoreOptions<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).DefineSetupStoreOptions
 
-Options parameter of `defineStore()` for setup stores. Can be extended to
-augment stores with the plugin API.
+Опційний параметр `defineStore()` для налаштування сховищ. Може бути розширений, 
+щоб доповнювати сховища за допомогою плагіна API.
 
-**`See`**
+**`Дивись`**
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Hierarchy
+## Ієрархія
 
 - [`DefineStoreOptionsBase`](pinia.DefineStoreOptionsBase.md)<`S`, [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>\>
 
   ↳ **`DefineSetupStoreOptions`**
 
-## Properties
+## Властивості
 
 ### actions
 
-• `Optional` **actions**: `A`
+• `Опціональні` **actions**: `A`
 
-Extracted actions. Added by useStore(). SHOULD NOT be added by the user when
-creating the store. Can be used in plugins to get the list of actions in a
-store defined with a setup function. Note this is always defined
+Дії, що витягуються зі сховища. Додаються за допомогою метода `useStore()`. НЕ ПОВИНЕН додаватися 
+користувачем при створенні сховища. Може використовуватися в плагінах для 
+отримання списку дій сховища, визначеного за допомогою функції `setup`. 
+Зверніть увагу, що це завжди визначено.
