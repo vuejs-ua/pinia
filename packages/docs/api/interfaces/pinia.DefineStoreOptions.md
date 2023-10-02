@@ -2,41 +2,41 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptions
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptions
 
-# Interface: DefineStoreOptions<Id, S, G, A\>
+# Інтерфейс: DefineStoreOptions<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).DefineStoreOptions
 
-Options parameter of `defineStore()` for option stores. Can be extended to
-augment stores with the plugin API.
+Опційний параметр `defineStore()` для опцій сховищ. Може бути розширений, щоб 
+доповнювати сховища за допомогою плагіна API.
 
-**`See`**
+**`Дивись`**
 
 [DefineStoreOptionsBase](pinia.DefineStoreOptionsBase.md).
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Hierarchy
+## Ієрархія
 
 - [`DefineStoreOptionsBase`](pinia.DefineStoreOptionsBase.md)<`S`, [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>\>
 
   ↳ **`DefineStoreOptions`**
 
-## Properties
+## Властивості
 
 ### actions
 
 • `Optional` **actions**: `A` & `ThisType`<`A` & `UnwrapRef`<`S`\> & [`_StoreWithState`](pinia._StoreWithState.md)<`Id`, `S`, `G`, `A`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\>
 
-Optional object of actions.
+Опційний об'єкт дій.
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
-Optional object of getters.
+Опційний об'єкт геттерів.
 
 ___
 
@@ -52,50 +52,51 @@ ___
 
 • **id**: `Id`
 
-Unique string key to identify the store across the application.
+Унікальний ключ-рядок для ідентифікації сховища у всьому додатку.
 
 ___
 
 ### state
 
-• `Optional` **state**: () => `S`
+• `Опційний` **state**: () => `S`
 
-#### Type declaration
+#### Типи оголошення
 
 ▸ (): `S`
 
-Function to create a fresh state. **Must be an arrow function** to ensure
-correct typings!
+Функція для створення нового стану. **Повинна бути стрілочна функція** 
+для забезпечення правильності вводу
 
-##### Returns
+##### Повертає
 
 `S`
 
-## Methods
+## Методи
 
 ### hydrate
 
-▸ `Optional` **hydrate**(`storeState`, `initialState`): `void`
+▸ `Опційний` **hydrate**(`storeState`, `initialState`): `void`
 
-Allows hydrating the store during SSR when complex state (like client side only refs) are used in the store
-definition and copying the value from `pinia.state` isn't enough.
+Дозволяє гідратувати сховище під час рендерингу на стороні серверу, коли 
+комплексний стан (наприклад референції лише на стороні клієнта) використовується 
+у визначенні сховища і копіювання значення з `pinia.state` є недостатнім.
 
-#### Parameters
+#### Параметри
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `storeState` | `UnwrapRef`<`S`\> | the current state in the store |
-| `initialState` | `UnwrapRef`<`S`\> | initialState |
+| Ім'я | Тип | Опис                    |
+| :------ | :------ |:------------------------|
+| `storeState` | `UnwrapRef`<`S`\> | поточний стан у сховищі |
+| `initialState` | `UnwrapRef`<`S`\> | початковий стан         |
 
-#### Returns
+#### Повертає
 
 `void`
 
-**`Example`**
+**`Приклад`**
 
-If in your `state`, you use any `customRef`s, any `computed`s, or any `ref`s that have a different value on
-Server and Client, you need to manually hydrate them. e.g., a custom ref that is stored in the local
-storage:
+Якщо у вашому `стані` ви використовуєте будь-яку `користувацьку референцію`, будь-яке `обчислюване значення` 
+або будь-яку `референцію`, які мають різне значення на сервері та на клієнті, то вам потрібно вручну
+гідратувати їх, наприклад користувацьку референцію, яка зберігається у локальному сховищі:
 
 ```ts
 const useStore = defineStore('main', {
