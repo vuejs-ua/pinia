@@ -2,48 +2,48 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / DefineStoreOptionsInPlugin
 
-# Interface: DefineStoreOptionsInPlugin<Id, S, G, A\>
+# Інтерфейс: DefineStoreOptionsInPlugin<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).DefineStoreOptionsInPlugin
 
-Available `options` when creating a pinia plugin.
+Доступні `опції` при створенні плагіна pinia.
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | `G` |
 | `A` | `A` |
 
-## Hierarchy
+## Ієрархія
 
 - `Omit`<[`DefineStoreOptions`](pinia.DefineStoreOptions.md)<`Id`, `S`, `G`, `A`\>, ``"id"`` \| ``"actions"``\>
 
   ↳ **`DefineStoreOptionsInPlugin`**
 
-## Properties
+## Властивості
 
 ### actions
 
-• **actions**: `A`
+• **дії**: `A`
 
-Extracted object of actions. Added by useStore() when the store is built
-using the setup API, otherwise uses the one passed to `defineStore()`.
-Defaults to an empty object if no actions are defined.
+Витягнутий об'єкт дій. Додається завдяки метода `useStore()`, коли сховище 
+створено за допомогою Setup API, інакше використовується об'єкт, який передаєтеся в `defineStore()`.
+За замовчуванням це порожній об'єкт, якщо в ньому не визначено жодної дії.
 
 ___
 
 ### getters
 
-• `Optional` **getters**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
+• `Опційні` **геттери**: `G` & `ThisType`<`UnwrapRef`<`S`\> & [`_StoreWithGetters`](../modules/pinia.md#_storewithgetters)<`G`\> & [`PiniaCustomProperties`](pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](../modules/pinia.md#statetree), [`_GettersTree`](../modules/pinia.md#_getterstree)<[`StateTree`](../modules/pinia.md#statetree)\>, [`_ActionsTree`](../modules/pinia.md#_actionstree)\>\> & [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\>
 
-Optional object of getters.
+Опційний об'єкт геттерів.
 
-#### Inherited from
+#### Успадковано від
 
 Omit.getters
 
@@ -51,48 +51,49 @@ ___
 
 ### state
 
-• `Optional` **state**: () => `S`
+• `Опційний` **стан**: () => `S`
 
-#### Type declaration
+#### Типи оголошення
 
 ▸ (): `S`
 
-Function to create a fresh state. **Must be an arrow function** to ensure
-correct typings!
+Функція для створення нового стану. **Повинна бути стрілочною функцією**, 
+щоб забезпечити правильність введення.
 
-##### Returns
+##### Повертає
 
 `S`
 
-#### Inherited from
+#### Успадковано від
 
 Omit.state
 
-## Methods
+## Методи
 
 ### hydrate
 
-▸ `Optional` **hydrate**(`storeState`, `initialState`): `void`
+▸ `Опційний` **hydrate**(`storeState`, `initialState`): `void`
 
-Allows hydrating the store during SSR when complex state (like client side only refs) are used in the store
-definition and copying the value from `pinia.state` isn't enough.
+Дозволяє гідратувати сховище під час рендерингу на стороні серверу, коли
+комплексний стан (наприклад референції лише на стороні клієнта) використовується
+у визначенні сховища і копіювання значення з `pinia.state` є недостатнім.
 
-#### Parameters
+#### Параметри
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `storeState` | `UnwrapRef`<`S`\> | the current state in the store |
-| `initialState` | `UnwrapRef`<`S`\> | initialState |
+| Ім'я | Тип | Опис                    |
+| :------ | :------ |:------------------------|
+| `storeState` | `UnwrapRef`<`S`\> | поточний стан в сховищі |
+| `initialState` | `UnwrapRef`<`S`\> | початковий стан         |
 
-#### Returns
+#### Повертає
 
 `void`
 
-**`Example`**
+**`Приклад`**
 
-If in your `state`, you use any `customRef`s, any `computed`s, or any `ref`s that have a different value on
-Server and Client, you need to manually hydrate them. e.g., a custom ref that is stored in the local
-storage:
+Якщо у вашому `стані` ви використовуєте будь-які `користувацькі референції`, або будь-які `обчислювані значення`
+чи будь-які `референції`, які мають різне значення на сервері та на клієнті, то вам потрібно вручну
+гідратувати їх, наприклад користувацьку референцію, яка зберігається у локальному сховищі:
 
 ```ts
 const useStore = defineStore('main', {
@@ -106,6 +107,6 @@ const useStore = defineStore('main', {
 })
 ```
 
-#### Inherited from
+#### Успадковано від
 
 Omit.hydrate
