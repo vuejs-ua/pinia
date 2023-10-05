@@ -9,6 +9,7 @@ editLink: false
 [pinia](../modules/pinia.md).Pinia
 
 Кожен застосунок повинен мати свою власну pinia, щоб створювати сховища
+
 ## Ієрархія
 
 - **`Pinia`**
