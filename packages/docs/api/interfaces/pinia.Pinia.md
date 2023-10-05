@@ -2,37 +2,36 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / Pinia
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / Pinia
 
-# Interface: Pinia
+# Інтерфейс: Pinia
 
 [pinia](../modules/pinia.md).Pinia
 
-Every application must own its own pinia to be able to create stores
-
-## Hierarchy
+Кожен застосунок повинен мати свою власну pinia, щоб створювати сховища
+## Ієрархія
 
 - **`Pinia`**
 
   ↳ [`TestingPinia`](pinia_testing.TestingPinia.md)
 
-## Properties
+## Властивості
 
 ### install
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Type declaration
+#### Типи оголошення
 
 ▸ (`app`): `void`
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Returns
+##### Повертає
 
 `void`
 
@@ -42,22 +41,22 @@ ___
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
-root state
+кореневий стан
 
-## Methods
+## Методи
 
 ### use
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
-Adds a store plugin to extend every store
+Додає плагін сховища для розширення кожного сховища
 
-#### Parameters
+#### Параметри
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | store plugin to add |
+| Ім'я | Тип | Опис                |
+| :------ | :------ |:--------------------|
+| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | плагін сховища, щоб додати |
 
-#### Returns
+#### Повертає
 
 [`Pinia`](pinia.Pinia.md)

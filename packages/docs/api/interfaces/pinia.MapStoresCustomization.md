@@ -2,13 +2,13 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / MapStoresCustomization
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / MapStoresCustomization
 
-# Interface: MapStoresCustomization
+# Інтерфейс: MapStoresCustomization
 
 [pinia](../modules/pinia.md).MapStoresCustomization
 
-Interface to allow customizing map helpers. Extend this interface with the
-following properties:
+Інтерфейс, що дозволяє налаштовувати мапу допоміжних функцій. Розширте 
+цей інтерфейс за допомогою наступних властивостей:
 
-- `suffix`: string. Affects the suffix of `mapStores()`, defaults to `Store`.
+- `suffix`: рядок. Впливає на суфікс `mapStores()`, за замовчуванням це `Store`.

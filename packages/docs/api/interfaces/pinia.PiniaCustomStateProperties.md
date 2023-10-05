@@ -2,16 +2,16 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomStateProperties
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / PiniaCustomStateProperties
 
-# Interface: PiniaCustomStateProperties<S\>
+# Інтерфейс: PiniaCustomStateProperties<S\>
 
 [pinia](../modules/pinia.md).PiniaCustomStateProperties
 
-Properties that are added to every `store.$state` by `pinia.use()`.
+Властивості, які додаються до кожного `store.$state` за допомогою `pinia.use()`.
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
