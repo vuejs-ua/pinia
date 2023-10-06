@@ -2,46 +2,46 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / StoreDefinition
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / StoreDefinition
 
-# Interface: StoreDefinition<Id, S, G, A\>
+# Інтерфейс: StoreDefinition<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).StoreDefinition
 
-Return type of `defineStore()`. Function that allows instantiating a store.
+Повертає тип `defineStore()`. Функція, яка дозволяє створити сховище.
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` = `string` |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Callable
+## Викликається
 
 ### StoreDefinition
 
 ▸ **StoreDefinition**(`pinia?`, `hot?`): [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-Returns a store, creates it if necessary.
+Повертає сховище, створює його, якщо потрібно.
 
-#### Parameters
+#### Параметри
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md) | Pinia instance to retrieve the store |
-| `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | dev only hot module replacement |
+| Ім'я | Тип | Опис                                    |
+| :------ | :------ |:----------------------------------------|
+| `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md)               | Екземпляр Pinia для отримання сховища |
+| `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | лише для розробки, гаряча заміна модуля |
 
-#### Returns
+#### Повертає
 
 [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-## Properties
+## Властивості
 
 ### $id %{#Properties-$id}%
 
 • **$id**: `Id`
 
-Id of the store. Used by map helpers.
+Ідентифікатор сховища. Він використовується допоміжними функціями `map`.
