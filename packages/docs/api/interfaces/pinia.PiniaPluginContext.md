@@ -2,30 +2,30 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / PiniaPluginContext
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / PiniaPluginContext
 
-# Interface: PiniaPluginContext<Id, S, G, A\>
+# Інтерфейс: PiniaPluginContext<Id, S, G, A\>
 
 [pinia](../modules/pinia.md).PiniaPluginContext
 
-Context argument passed to Pinia plugins.
+Аргумент контексту, який передається до плагінів Pinia.
 
-## Type parameters
+## Типи параметрів
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` = `string` |
 | `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
 | `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
 | `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
 
-## Properties
+## Властивості
 
 ### app
 
 • **app**: `App`<`any`\>
 
-Current app created with `Vue.createApp()`.
+Поточний застосунок, який створено за допомогою `Vue.createApp()`.
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **options**: [`DefineStoreOptionsInPlugin`](pinia.DefineStoreOptionsInPlugin.md)<`Id`, `S`, `G`, `A`\>
 
-Initial options defining the store when calling `defineStore()`.
+Початкові параметри, що визначають сховище під час виклику `defineStore()`.
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **pinia**: [`Pinia`](pinia.Pinia.md)
 
-pinia instance.
+екземпляр pinia.
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 • **store**: [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
 
-Current store being extended.
+Поточний сховище, яке буде розширене.
