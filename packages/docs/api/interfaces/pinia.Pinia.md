@@ -22,7 +22,7 @@ editLink: false
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Типи оголошення
+#### Оголошення типів
 
 ▸ (`app`): `void`
 
