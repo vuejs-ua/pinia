@@ -2,32 +2,33 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationPatchFunction
+[Документація API](../index.md) / [pinia](../modules/pinia.md) / SubscriptionCallbackMutationPatchFunction
 
-# Interface: SubscriptionCallbackMutationPatchFunction
+# Інтерфейс: SubscriptionCallbackMutationPatchFunction
 
 [pinia](../modules/pinia.md).SubscriptionCallbackMutationPatchFunction
 
-Context passed to a subscription callback when `store.$patch()` is called
-with a function.
+Контекст, що передається у функцію зворотного виклику підписки при виклику `store.$patch()`
+з функцією.
 
-## Hierarchy
+## Ієрархія
 
 - [`_SubscriptionCallbackMutationBase`](pinia._SubscriptionCallbackMutationBase.md)
 
   ↳ **`SubscriptionCallbackMutationPatchFunction`**
 
-## Properties
+## Властивості
 
 ### events
 
 • **events**: `DebuggerEvent`[]
 
-🔴 DEV ONLY, DO NOT use for production code. Different mutation calls. Comes from
-https://vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging and allows to track mutations in
-devtools and plugins **during development only**.
+🔴 ТІЛЬКИ ДЛЯ РОЗРОБКИ, НЕ ВИКОРИСТОВУВАТИ для виробничого коду. Різні виклики змін.
+Береться з https://ua.vuejs.org/guide/extras/reactivity-in-depth.html#reactivity-debugging
+і дозволяє відстежувати зміни у devtools і плагінах **тільки під час розробки**.
 
-#### Overrides
+
+#### Перевизначення
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[events](pinia._SubscriptionCallbackMutationBase.md#events)
 
@@ -37,9 +38,9 @@ ___
 
 • **storeId**: `string`
 
-`id` of the store doing the mutation.
+`id` сховища, що здійснює зміну.
 
-#### Inherited from
+#### Успадковано від
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
 
@@ -49,8 +50,8 @@ ___
 
 • **type**: [`patchFunction`](../enums/pinia.MutationType.md#patchfunction)
 
-Type of the mutation.
+Тип зміни.
 
-#### Overrides
+#### Перевизначення
 
 [_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[type](pinia._SubscriptionCallbackMutationBase.md#type)
