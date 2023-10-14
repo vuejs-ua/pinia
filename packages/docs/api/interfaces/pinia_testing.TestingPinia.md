@@ -2,28 +2,28 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingPinia
+[Документація API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingPinia
 
-# Interface: TestingPinia
+# Інтерфейс: TestingPinia
 
 [@pinia/testing](../modules/pinia_testing.md).TestingPinia
 
-Pinia instance specifically designed for testing. Extends a regular
-`Pinia` instance with test specific properties.
+Екземпляр Pinia, спеціально розроблений для тестування. Розширює звичайний 
+екземпляр`Pinia` зі специфічними для тестування властивостями.
 
-## Hierarchy
+## Ієрархія
 
 - [`Pinia`](pinia.Pinia.md)
 
   ↳ **`TestingPinia`**
 
-## Properties
+## Властивості
 
 ### app
 
 • **app**: `App`<`any`\>
 
-App used by Pinia
+Застосунок, яким користується Pinia
 
 ___
 
@@ -31,21 +31,21 @@ ___
 
 • **install**: (`app`: `App`<`any`\>) => `void`
 
-#### Type declaration
+#### Оголошення типу
 
 ▸ (`app`): `void`
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `app` | `App`<`any`\> |
 
-##### Returns
+##### Повертає
 
 `void`
 
-#### Inherited from
+#### Успадковано від
 
 [Pinia](pinia.Pinia.md).[install](pinia.Pinia.md#install)
 
@@ -55,30 +55,30 @@ ___
 
 • **state**: `Ref`<`Record`<`string`, [`StateTree`](../modules/pinia.md#statetree)\>\>
 
-root state
+кореневий стан
 
-#### Inherited from
+#### Успадковано від
 
 [Pinia](pinia.Pinia.md).[state](pinia.Pinia.md#state)
 
-## Methods
+## Методи
 
 ### use
 
 ▸ **use**(`plugin`): [`Pinia`](pinia.Pinia.md)
 
-Adds a store plugin to extend every store
+Додає плагін сховища для розширення кожного сховища
 
-#### Parameters
+#### Параметри
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | store plugin to add |
+| Ім'я | Тип | Опис                |
+| :------ | :------ |:--------------------|
+| `plugin` | [`PiniaPlugin`](pinia.PiniaPlugin.md) | плагін сховища, щоб додати |
 
-#### Returns
+#### Повертає
 
 [`Pinia`](pinia.Pinia.md)
 
-#### Inherited from
+#### Успадковано від
 
 [Pinia](pinia.Pinia.md).[use](pinia.Pinia.md#use)
