@@ -2,22 +2,22 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [@pinia/nuxt](../modules/pinia_nuxt.md) / ModuleOptions
+[Документація API](../index.md) / [@pinia/nuxt](../modules/pinia_nuxt.md) / ModuleOptions
 
-# Interface: ModuleOptions
+# Інтерфейс: ModuleOptions
 
 [@pinia/nuxt](../modules/pinia_nuxt.md).ModuleOptions
 
-## Properties
+## Властивості
 
 ### disableVuex
 
-• `Optional` **disableVuex**: `boolean`
+• `Опціональна` **disableVuex**: `boolean`
 
-Pinia disables Vuex by default, set this option to `false` to avoid it and
-use Pinia alongside Vuex (Nuxt 2 only)
+За замовчуванням Pinia відключає Vuex, встановіть цю опцію на `false`, щоб
+уникнути цього, використовуйте Pinia разом з Vuex (лише у Nuxt 2)
 
-**`Default`**
+**`Значенням за промовчанням`**
 
 `true`
 
@@ -25,12 +25,13 @@ ___
 
 ### storesDirs
 
-• `Optional` **storesDirs**: `string`[]
+• `Опціональна` **storesDirs**: `string`[]
 
-Automatically add stores dirs to the auto imports. This is the same as
-directly adding the dirs to the `imports.dirs` option. If you want to
-also import nested stores, you can use the glob pattern `./stores/**`
+Автоматичне додавання директорій сховищ до автоматичного імпорту. Це те
+саме, що і безпосереднє додавання директорій до параметра `imports.dirs`.
+Якщо ви хочете також імпортувати вкладені сховища, ви можете скористатися 
+глобального шаблону `./stores/**`.
 
-**`Default`**
+**`Значенням за промовчанням`**
 
 `['./stores']`

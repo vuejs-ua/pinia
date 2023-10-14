@@ -2,45 +2,45 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
+[Документація API](../index.md) / [@pinia/testing](../modules/pinia_testing.md) / TestingOptions
 
-# Interface: TestingOptions
+# Інтерфейс: TestingOptions
 
 [@pinia/testing](../modules/pinia_testing.md).TestingOptions
 
-## Properties
+## Властивості
 
 ### createSpy
 
-• `Optional` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
+• `Опціональна` **createSpy**: (`fn?`: (...`args`: `any`[]) => `any`) => (...`args`: `any`[]) => `any`
 
-#### Type declaration
+#### Оголошення типу
 
 ▸ (`fn?`): (...`args`: `any`[]) => `any`
 
-Function used to create a spy for actions and `$patch()`. Pre-configured
-with `jest.fn` in Jest projects or `vi.fn` in Vitest projects if
-`globals: true` is set.
+Функція для створення шпигуна для дій та `$patch()`. Попередньо 
+налаштовується за допомогою `jest.fn` у проектах Jest або `vi.fn` 
+у проектах Vitest, якщо встановлено `globals: true`.
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `fn?` | (...`args`: `any`[]) => `any` |
 
-##### Returns
+##### Повертає
 
 `fn`
 
 ▸ (`...args`): `any`
 
-##### Parameters
+##### Параметри
 
-| Name | Type |
+| Ім'я | Тип |
 | :------ | :------ |
 | `...args` | `any`[] |
 
-##### Returns
+##### Повертає
 
 `any`
 
@@ -48,58 +48,59 @@ ___
 
 ### fakeApp
 
-• `Optional` **fakeApp**: `boolean`
+• `Опціональний` **fakeApp**: `boolean`
 
-Creates an empty App and calls `app.use(pinia)` with the created testing
-pinia. This is allows you to use plugins while unit testing stores as
-plugins **will wait for pinia to be installed in order to be executed**.
-Defaults to false.
+Створює порожній застосунок і викликає `app.use(pinia)` зі створеною 
+тестотовою pinia. Це дозволяє використовувати плагіни, поки модульне 
+тестування зберігається як плагіни **чекатимуть на встановлення pinia, 
+щоб бути використаними**. За промовчанням має значення false.
 
 ___
 
 ### initialState
 
-• `Optional` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
+• `Опціональний` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
 
-Allows defining a partial initial state of all your stores. This state gets applied after a store is created,
-allowing you to only set a few properties that are required in your test.
-
+Дозволяє визначити частковий початковий стан всіх ваших сховищ. Цей стан 
+застосовується після створення сховища, дозволяючи вам встановити лише 
+декілька властивостей, необхідних для вашого тесту.
 ___
 
 ### plugins
 
-• `Optional` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
+• `Опціональний` **plugins**: [`PiniaPlugin`](pinia.PiniaPlugin.md)[]
 
-Plugins to be installed before the testing plugin. Add any plugins used in
-your application that will be used while testing.
+Плагіни, які мають бути встановлені перед тестувальним плагіном. Додайте 
+будь-які плагіни, що використовуються у вашому додатку, які будуть 
+використовуватися під час тестування.
 
 ___
 
 ### stubActions
 
-• `Optional` **stubActions**: `boolean`
+• `Опціональний` **stubActions**: `boolean`
 
-When set to false, actions are only spied, they still get executed. When
-set to true, actions will be replaced with spies, resulting in their code
-not being executed. Defaults to true. NOTE: when providing `createSpy()`,
-it will **only** make the `fn` argument `undefined`. You still have to
-handle this in `createSpy()`.
+Якщо встановлено значення false, дії лише підглядаються, вони все одно 
+виконуються. Якщо встановлено у true, дії буде замінено шпигунами, що 
+призведе до того, що їхній код не буде виконано. За замовчуванням має 
+значення true. ЗАУВАЖЕННЯ: при наданні `createSpy()`, це **лише** зробить 
+аргумент `fn` `undefined`. Вам все одно доведеться обробляти його у `createSpy()`.
 
 ___
 
 ### stubPatch
 
-• `Optional` **stubPatch**: `boolean`
+• `Опціональний` **stubPatch**: `boolean`
 
-When set to true, calls to `$patch()` won't change the state. Defaults to
-false. NOTE: when providing `createSpy()`, it will **only** make the `fn`
-argument `undefined`. You still have to handle this in `createSpy()`.
+Якщо встановлено у true, виклики `$patch()` не змінюватимуть стан. За замовчуванням 
+має значення false. ЗАУВАЖЕННЯ: при наданні `createSpy()`, він **лише** зробить аргумент
+`fn` аргумент `fn` буде `undefined`. Вам все одно доведеться обробляти його у `createSpy()`.
 
 ___
 
 ### stubReset
 
-• `Optional` **stubReset**: `boolean`
+• `Опціональний` **stubReset**: `boolean`
 
-When set to true, calls to `$reset()` won't change the state. Defaults to
-false.
+Якщо встановлено значення true, виклики `$reset()` не змінюватимуть стан. 
+За замовчуванням має значення false.
