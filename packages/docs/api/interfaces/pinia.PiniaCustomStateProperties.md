@@ -14,4 +14,4 @@ editLink: false
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
+| `S` | extends [`StateTree`](../modules/pinia.md#StateTree) = [`StateTree`](../modules/pinia.md#StateTree) |

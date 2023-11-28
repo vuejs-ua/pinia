@@ -61,22 +61,27 @@ const { data } = await useAsyncData('user', () => store.fetchUser())
 
 ## Автоматичні імпортування
 
-За умовчанням `@pinia/nuxt` надає один автоматичний імпорт: `usePinia()`, який схожий на `getActivePinia()`, але краще працює з Nuxt. Ви можете додати автоматичний імпорт, щоб полегшити ваше життя:
+За промовчанням `@pinia/nuxt` надає кілька автоматичні імпорти:
 
-```js
-// nuxt.config.js
+- `usePinia()`, який схожий на `getActivePinia()`, але краще працює з Nuxt. Ви можете додати автоматичний імпорт, щоб полегшити ваше життя:
+- `defineStore()` для оголошення сховищ
+- `storeToRefs()` коли вам потрібно отримати окремі референції з магазину
+- `acceptHMRUpdate()` для [гарячої заміни модулів](../cookbook/hot-module-replacement.md)
+
+It also automatically imports **all stores** defined within your `stores` folder. It doesn't lookup for nested stores though. You can customize this behavior by setting the `storesDirs` option:
+
+```ts
+// nuxt.config.ts
 export default defineNuxtConfig({
   // ... інші налаштування
   modules: ['@pinia/nuxt'],
   pinia: {
-    autoImports: [
-      // автоматично імпортує `defineStore`
-      'defineStore', // import { defineStore } from 'pinia'
-      ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-    ],
+    storesDirs: ['./stores/**', './custom-folder/stores/**'],
   },
 })
 ```
+
+Note the folders are relative to the root of your project. If you change the `srcDir` option, you need to adapt the paths accordingly.
 
 ## Nuxt 2 без моста
 

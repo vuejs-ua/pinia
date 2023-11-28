@@ -42,13 +42,13 @@ ___
 
 #### Успадковано від
 
-[_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
+[_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeId)
 
 ___
 
 ### type
 
-• **type**: [`patchFunction`](../enums/pinia.MutationType.md#patchfunction)
+• **type**: [`patchFunction`](../enums/pinia.MutationType.md#patchFunction)
 
 Тип зміни.
 

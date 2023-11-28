@@ -15,7 +15,7 @@ editLink: false
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
+| `S` | extends [`StateTree`](../modules/pinia.md#StateTree) |
 | `Store` | `Store` |
 
 ## Ієрархія

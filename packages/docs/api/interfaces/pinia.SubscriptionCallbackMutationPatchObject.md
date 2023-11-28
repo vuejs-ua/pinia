@@ -41,7 +41,7 @@ ___
 
 ### payload
 
-• **payload**: [`_DeepPartial`](../modules/pinia.md#_deeppartial)<`S`\>
+• **payload**: [`_DeepPartial`](../modules/pinia.md#_DeepPartial)<`S`\>
 
 Об'єкт, що передається в `store.$patch()`.
 
@@ -55,13 +55,13 @@ ___
 
 #### Успадковано від
 
-[_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeid)
+[_SubscriptionCallbackMutationBase](pinia._SubscriptionCallbackMutationBase.md).[storeId](pinia._SubscriptionCallbackMutationBase.md#storeId)
 
 ___
 
 ### type
 
-• **type**: [`patchObject`](../enums/pinia.MutationType.md#patchobject)
+• **type**: [`patchObject`](../enums/pinia.MutationType.md#patchObject)
 
 Тип зміни.
 

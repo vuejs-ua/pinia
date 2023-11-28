@@ -22,6 +22,7 @@ editLink: false
 - [PiniaCustomStateProperties](../interfaces/pinia.PiniaCustomStateProperties.md)
 - [PiniaPlugin](../interfaces/pinia.PiniaPlugin.md)
 - [PiniaPluginContext](../interfaces/pinia.PiniaPluginContext.md)
+- [SetupStoreDefinition](../interfaces/pinia.SetupStoreDefinition.md)
 - [StoreDefinition](../interfaces/pinia.StoreDefinition.md)
 - [StoreProperties](../interfaces/pinia.StoreProperties.md)
 - [SubscriptionCallbackMutationDirect](../interfaces/pinia.SubscriptionCallbackMutationDirect.md)
@@ -55,7 +56,7 @@ ___
 
 ### Store
 
-Ƭ **Store**<`Id`, `S`, `G`, `A`\>: [`_StoreWithState`](../interfaces/pinia._StoreWithState.md)<`Id`, `S`, `G`, `A`\> & `UnwrapRef`<`S`\> & [`_StoreWithGetters`](pinia.md#_storewithgetters)<`G`\> & [`_ActionsTree`](pinia.md#_actionstree) extends `A` ? {} : `A` & [`PiniaCustomProperties`](../interfaces/pinia.PiniaCustomProperties.md)<`Id`, `S`, `G`, `A`\> & [`PiniaCustomStateProperties`](../interfaces/pinia.PiniaCustomStateProperties.md)<`S`\>
+Ƭ **Store**<`Id`, `S`, `G`, `A`\>: [`_StoreWithState`](../interfaces/pinia._StoreWithState.md)<`Id`, `S`, `G`, `A`\> & `UnwrapRef`<`S`\> & [`_StoreWithGetters`](pinia.md#_StoreWithGetters)<`G`\> & [`_ActionsTree`](pinia.md#_ActionsTree) extends `A` ? {} : `A` & [`PiniaCustomProperties`](../interfaces/pinia.PiniaCustomProperties.md)<`Id`, `S`, `G`, `A`\> & [`PiniaCustomStateProperties`](../interfaces/pinia.PiniaCustomStateProperties.md)<`S`\>
 
 Тип сховища для створення сховища.
 
@@ -64,7 +65,7 @@ ___
 | Ім'я  | Тип                                            |
 |:-----|:-----------------------------------------------|
 | `Id` | extends `string` = `string`                    |
-| `S`  | extends [`StateTree`](pinia.md#statetree) = {} |
+| `S`  | extends [`StateTree`](pinia.md#StateTree) = {} |
 | `G`  | {}                                             |
 | `A`  | {}                                             |
 
@@ -72,7 +73,7 @@ ___
 
 ### StoreActions
 
-Ƭ **StoreActions**<`SS`\>: `SS` extends [`Store`](pinia.md#store)<`string`, [`StateTree`](pinia.md#statetree), [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, infer A\> ? `A` : [`_ExtractActionsFromSetupStore`](pinia.md#_extractactionsfromsetupstore)<`SS`\>
+Ƭ **StoreActions**<`SS`\>: `SS` extends [`Store`](pinia.md#Store)<`string`, [`StateTree`](pinia.md#StateTree), [`_GettersTree`](pinia.md#_GettersTree)<[`StateTree`](pinia.md#StateTree)\>, infer A\> ? `A` : [`_ExtractActionsFromSetupStore`](pinia.md#_ExtractActionsFromSetupStore)<`SS`\>
 
 Витягує дії за типом сховища. Працює як зі сховищем композиційного API, так і зі сховищем опційного.
 
@@ -86,7 +87,7 @@ ___
 
 ### StoreGeneric
 
-Ƭ **StoreGeneric**: [`Store`](pinia.md#store)<`string`, [`StateTree`](pinia.md#statetree), [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, [`_ActionsTree`](pinia.md#_actionstree)\>
+Ƭ **StoreGeneric**: [`Store`](pinia.md#Store)<`string`, [`StateTree`](pinia.md#StateTree), [`_GettersTree`](pinia.md#_GettersTree)<[`StateTree`](pinia.md#StateTree)\>, [`_ActionsTree`](pinia.md#_ActionsTree)\>
 
 Загальна та небезпечна версія сховища. Не дає збою при доступі через рядки, 
 що значно спрощує написання загальних функцій, які не зважають 
@@ -96,7 +97,7 @@ ___
 
 ### StoreGetters
 
-Ƭ **StoreGetters**<`SS`\>: `SS` extends [`Store`](pinia.md#store)<`string`, [`StateTree`](pinia.md#statetree), infer G, [`_ActionsTree`](pinia.md#_actionstree)\> ? [`_StoreWithGetters`](pinia.md#_storewithgetters)<`G`\> : [`_ExtractGettersFromSetupStore`](pinia.md#_extractgettersfromsetupstore)<`SS`\>
+Ƭ **StoreGetters**<`SS`\>: `SS` extends [`Store`](pinia.md#Store)<`string`, [`StateTree`](pinia.md#StateTree), infer G, [`_ActionsTree`](pinia.md#_ActionsTree)\> ? [`_StoreWithGetters`](pinia.md#_StoreWithGetters)<`G`\> : [`_ExtractGettersFromSetupStore`](pinia.md#_ExtractGettersFromSetupStore)<`SS`\>
 
 Витягує гетери сховища. Працює як зі сховищем композиційного API, так і зі сховищем опційного.
 
@@ -110,14 +111,14 @@ ___
 
 ### StoreOnActionListener
 
-Ƭ **StoreOnActionListener**<`Id`, `S`, `G`, `A`\>: (`context`: [`StoreOnActionListenerContext`](pinia.md#storeonactionlistenercontext)<`Id`, `S`, `G`, {} extends `A` ? [`_ActionsTree`](pinia.md#_actionstree) : `A`\>) => `void`
+Ƭ **StoreOnActionListener**<`Id`, `S`, `G`, `A`\>: (`context`: [`StoreOnActionListenerContext`](pinia.md#StoreOnActionListenerContext)<`Id`, `S`, `G`, {} extends `A` ? [`_ActionsTree`](pinia.md#_ActionsTree) : `A`\>) => `void`
 
 #### Параметри типу
 
 | Ім'я | Тип                                       |
 | :------ |:------------------------------------------|
 | `Id` | extends `string`                          |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
 | `G` | `G`                                       |
 | `A` | `A`                                       |
 
@@ -131,7 +132,7 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `context` | [`StoreOnActionListenerContext`](pinia.md#storeonactionlistenercontext)<`Id`, `S`, `G`, {} extends `A` ? [`_ActionsTree`](pinia.md#_actionstree) : `A`\> |
+| `context` | [`StoreOnActionListenerContext`](pinia.md#StoreOnActionListenerContext)<`Id`, `S`, `G`, {} extends `A` ? [`_ActionsTree`](pinia.md#_ActionsTree) : `A`\> |
 
 ##### Повертає
 
@@ -141,7 +142,7 @@ ___
 
 ### StoreOnActionListenerContext
 
-Ƭ **StoreOnActionListenerContext**<`Id`, `S`, `G`, `A`\>: [`_ActionsTree`](pinia.md#_actionstree) extends `A` ? [`_StoreOnActionListenerContext`](../interfaces/pinia._StoreOnActionListenerContext.md)<[`StoreGeneric`](pinia.md#storegeneric), `string`, [`_ActionsTree`](pinia.md#_actionstree)\> : { [Name in keyof A]: Name extends string ? \_StoreOnActionListenerContext<Store<Id, S, G, A\>, Name, A\> : never }[keyof `A`]
+Ƭ **StoreOnActionListenerContext**<`Id`, `S`, `G`, `A`\>: [`_ActionsTree`](pinia.md#_ActionsTree) extends `A` ? [`_StoreOnActionListenerContext`](../interfaces/pinia._StoreOnActionListenerContext.md)<[`StoreGeneric`](pinia.md#StoreGeneric), `string`, [`_ActionsTree`](pinia.md#_ActionsTree)\> : { [Name in keyof A]: Name extends string ? \_StoreOnActionListenerContext<Store<Id, S, G, A\>, Name, A\> : never }[keyof `A`]
 
 Об'єкт контексту, що передається до функцій зворотного виклику `store.$onAction(context => {})`
 ЗАВДАННЯ: повинен мати лише ідентифікатор, сховище та дії для створення відповідного об'єкта
@@ -151,7 +152,7 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
 | `G` | `G` |
 | `A` | `A` |
 
@@ -159,7 +160,7 @@ ___
 
 ### StoreState
 
-Ƭ **StoreState**<`SS`\>: `SS` extends [`Store`](pinia.md#store)<`string`, infer S, [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, [`_ActionsTree`](pinia.md#_actionstree)\> ? `UnwrapRef`<`S`\> : [`_ExtractStateFromSetupStore`](pinia.md#_extractstatefromsetupstore)<`SS`\>
+Ƭ **StoreState**<`SS`\>: `SS` extends [`Store`](pinia.md#Store)<`string`, infer S, [`_GettersTree`](pinia.md#_GettersTree)<[`StateTree`](pinia.md#StateTree)\>, [`_ActionsTree`](pinia.md#_ActionsTree)\> ? `UnwrapRef`<`S`\> : [`_ExtractStateFromSetupStore`](pinia.md#_ExtractStateFromSetupStore)<`SS`\>
 
 Витягує стан типу сховища. Працює як зі сховищем Setup, так і зі сховищем Options. 
 Зверніть увагу, що це розгортає посилання.
@@ -174,7 +175,7 @@ ___
 
 ### SubscriptionCallback
 
-Ƭ **SubscriptionCallback**<`S`\>: (`mutation`: [`SubscriptionCallbackMutation`](pinia.md#subscriptioncallbackmutation)<`S`\>, `state`: `UnwrapRef`<`S`\>) => `void`
+Ƭ **SubscriptionCallback**<`S`\>: (`mutation`: [`SubscriptionCallbackMutation`](pinia.md#SubscriptionCallbackMutation)<`S`\>, `state`: `UnwrapRef`<`S`\>) => `void`
 
 #### Параметри типу
 
@@ -192,7 +193,7 @@ ___
 
 | Ім'я | Type |
 | :------ | :------ |
-| `mutation` | [`SubscriptionCallbackMutation`](pinia.md#subscriptioncallbackmutation)<`S`\> |
+| `mutation` | [`SubscriptionCallbackMutation`](pinia.md#SubscriptionCallbackMutation)<`S`\> |
 | `state` | `UnwrapRef`<`S`\> |
 
 ##### Повертає
@@ -217,7 +218,7 @@ ___
 
 ### \_ActionsTree %{#Type-Aliases-\_ActionsTree}%
 
-Ƭ **\_ActionsTree**: `Record`<`string`, [`_Method`](pinia.md#_method)\>
+Ƭ **\_ActionsTree**: `Record`<`string`, [`_Method`](pinia.md#_Method)\>
 
 Тип об'єкта дій. 
 **Лише** для внутрішнього використання
@@ -226,7 +227,7 @@ ___
 
 ### \_Awaited %{#Type-Aliases-\_Awaited}%
 
-Ƭ **\_Awaited**<`T`\>: `T` extends ``null`` \| `undefined` ? `T` : `T` extends `object` & { `then`: (`onfulfilled`: `F`) => `any`  } ? `F` extends (`value`: infer V, ...`args`: `any`) => `any` ? [`_Awaited`](pinia.md#_awaited)<`V`\> : `never` : `T`
+Ƭ **\_Awaited**<`T`\>: `T` extends ``null`` \| `undefined` ? `T` : `T` extends `object` & { `then`: (`onfulfilled`: `F`) => `any`  } ? `F` extends (`value`: infer V, ...`args`: `any`) => `any` ? [`_Awaited`](pinia.md#_Awaited)<`V`\> : `never` : `T`
 
 #### Параметри типу %{#Type-Aliases-\_Awaited-Type-parameters}%
 
@@ -240,7 +241,7 @@ ___
 
 Ƭ **\_DeepPartial**<`T`\>: { [K in keyof T]?: \_DeepPartial<T[K]\> }
 
-Рекурсивний `Partial<T>`. Використовується [['$patch']](pinia.md#store).
+Рекурсивний `Partial<T>`. Використовується [['$patch']](pinia.md#Store).
 
 **Лише** для внутрішнього використання
 
@@ -254,7 +255,7 @@ ___
 
 ### \_ExtractActionsFromSetupStore %{#Type-Aliases-\_ExtractActionsFromSetupStore}%
 
-Ƭ **\_ExtractActionsFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractActionsFromSetupStore_Keys`](pinia.md#_extractactionsfromsetupstore_keys)<`SS`\> extends keyof `SS` ? `Pick`<`SS`, [`_ExtractActionsFromSetupStore_Keys`](pinia.md#_extractactionsfromsetupstore_keys)<`SS`\>\> : `never`
+Ƭ **\_ExtractActionsFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractActionsFromSetupStore_Keys`](pinia.md#_ExtractActionsFromSetupStore_Keys)<`SS`\> extends keyof `SS` ? `Pick`<`SS`, [`_ExtractActionsFromSetupStore_Keys`](pinia.md#_ExtractActionsFromSetupStore_Keys)<`SS`\>\> : `never`
 
 **Лише** для внутрішнього використання
 
@@ -283,7 +284,7 @@ ___
 
 ### \_ExtractGettersFromSetupStore %{#Type-Aliases-\_ExtractGettersFromSetupStore}%
 
-Ƭ **\_ExtractGettersFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractGettersFromSetupStore_Keys`](pinia.md#_extractgettersfromsetupstore_keys)<`SS`\> extends keyof `SS` ? `Pick`<`SS`, [`_ExtractGettersFromSetupStore_Keys`](pinia.md#_extractgettersfromsetupstore_keys)<`SS`\>\> : `never`
+Ƭ **\_ExtractGettersFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractGettersFromSetupStore_Keys`](pinia.md#_ExtractGettersFromSetupStore_Keys)<`SS`\> extends keyof `SS` ? `Pick`<`SS`, [`_ExtractGettersFromSetupStore_Keys`](pinia.md#_ExtractGettersFromSetupStore_Keys)<`SS`\>\> : `never`
 
 **Лише** для внутрішнього використання
 
@@ -312,7 +313,7 @@ ___
 
 ### \_ExtractStateFromSetupStore %{#Type-Aliases-\_ExtractStateFromSetupStore}%
 
-Ƭ **\_ExtractStateFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractStateFromSetupStore_Keys`](pinia.md#_extractstatefromsetupstore_keys)<`SS`\> extends keyof `SS` ? [`_UnwrapAll`](pinia.md#_unwrapall)<`Pick`<`SS`, [`_ExtractStateFromSetupStore_Keys`](pinia.md#_extractstatefromsetupstore_keys)<`SS`\>\>\> : `never`
+Ƭ **\_ExtractStateFromSetupStore**<`SS`\>: `SS` extends `undefined` \| `void` ? {} : [`_ExtractStateFromSetupStore_Keys`](pinia.md#_ExtractStateFromSetupStore_Keys)<`SS`\> extends keyof `SS` ? [`_UnwrapAll`](pinia.md#_UnwrapAll)<`Pick`<`SS`, [`_ExtractStateFromSetupStore_Keys`](pinia.md#_ExtractStateFromSetupStore_Keys)<`SS`\>\>\> : `never`
 
 **Лише** для внутрішнього використання
 
@@ -350,7 +351,7 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
 
 ___
 
@@ -394,10 +395,10 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
-| `T` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#store)<`Id`, `S`, `G`, `A`\>) => `any`\> = {} |
+| `T` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#Store)<`Id`, `S`, `G`, `A`\>) => `any`\> = {} |
 
 ___
 
@@ -411,8 +412,8 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `Keys` | extends keyof `S` \| keyof `G` = keyof `S` \| keyof `G` |
 
 ___
@@ -427,7 +428,7 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
 | `T` | extends `Record`<`string`, keyof `S`\> |
 
 ___
@@ -442,7 +443,7 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
 
 ___
 
@@ -472,7 +473,7 @@ ___
 
 ### \_Spread %{#Type-Aliases-\_Spread}%
 
-Ƭ **\_Spread**<`A`\>: `A` extends [infer L, ...(infer R)] ? [`_StoreObject`](pinia.md#_storeobject)<`L`\> & [`_Spread`](pinia.md#_spread)<`R`\> : `unknown`
+Ƭ **\_Spread**<`A`\>: `A` extends [infer L, ...(infer R)] ? [`_StoreObject`](pinia.md#_StoreObject)<`L`\> & [`_Spread`](pinia.md#_Spread)<`R`\> : `unknown`
 
 **Лише** для внутрішнього використання.
 
@@ -586,9 +587,9 @@ new Vue({
 | Name | Type |
 | :------ | :------ |
 | `Id` | extends `string` = `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) = [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> = [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
-| `A` | [`_ActionsTree`](pinia.md#_actionstree) |
+| `S` | extends [`StateTree`](pinia.md#StateTree) = [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> = [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
+| `A` | [`_ActionsTree`](pinia.md#_ActionsTree) |
 
 #### Параметри
 
@@ -647,8 +648,8 @@ ___
 | Ім'я | Тип                                                         |
 | :------ |:------------------------------------------------------------|
 | `Id` | extends `string`                                            |
-| `S` | extends [`StateTree`](pinia.md#statetree) = {}             |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> = {} |
+| `S` | extends [`StateTree`](pinia.md#StateTree) = {}             |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> = {} |
 | `A` | {}                                                          |
 
 #### Параметри
@@ -671,8 +672,8 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) = {} |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> = {} |
+| `S` | extends [`StateTree`](pinia.md#StateTree) = {} |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> = {} |
 | `A` | {} |
 
 #### Параметри
@@ -685,7 +686,7 @@ ___
 
 [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, `S`, `G`, `A`\>
 
-▸ **defineStore**<`Id`, `SS`\>(`id`, `storeSetup`, `options?`): [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_extractstatefromsetupstore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_extractgettersfromsetupstore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_extractactionsfromsetupstore)<`SS`\>\>
+▸ **defineStore**<`Id`, `SS`\>(`id`, `storeSetup`, `options?`): [`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_ExtractStateFromSetupStore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_ExtractGettersFromSetupStore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_ExtractActionsFromSetupStore)<`SS`\>\>
 
 Створює функцію `useStore`, яка отримує екземпляр сховища
 
@@ -702,11 +703,30 @@ ___
 | :------ | :------ |:------------------------------------------------|
 | `id` | `Id` | ідентифікатор сховища (повинен бути унікальним) |
 | `storeSetup` | () => `SS` | функція, яка оголошує сховище                   |
-| `options?` | [`DefineSetupStoreOptions`](../interfaces/pinia.DefineSetupStoreOptions.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_extractstatefromsetupstore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_extractgettersfromsetupstore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_extractactionsfromsetupstore)<`SS`\>\> | додаткові параметри                             |
+| `options?` | [`DefineSetupStoreOptions`](../interfaces/pinia.DefineSetupStoreOptions.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_ExtractStateFromSetupStore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_ExtractGettersFromSetupStore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_ExtractActionsFromSetupStore)<`SS`\>\> | додаткові параметри                             |
 
 #### Повертає
 
-[`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_extractstatefromsetupstore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_extractgettersfromsetupstore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_extractactionsfromsetupstore)<`SS`\>\>
+[`StoreDefinition`](../interfaces/pinia.StoreDefinition.md)<`Id`, [`_ExtractStateFromSetupStore`](pinia.md#_ExtractStateFromSetupStore)<`SS`\>, [`_ExtractGettersFromSetupStore`](pinia.md#_ExtractGettersFromSetupStore)<`SS`\>, [`_ExtractActionsFromSetupStore`](pinia.md#_ExtractActionsFromSetupStore)<`SS`\>\>
+
+___
+
+### disposePinia
+
+▸ **disposePinia**(`pinia`): `void`
+
+Dispose a Pinia instance by stopping its effectScope and removing the state, plugins and stores. This is mostly
+useful in tests, with both a testing pinia or a regular pinia and in applications that use multiple pinia instances.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `pinia` | [`Pinia`](../interfaces/pinia.Pinia.md) | pinia instance |
+
+#### Returns
+
+`void`
 
 ___
 
@@ -724,7 +744,7 @@ ___
 
 ### mapActions
 
-▸ **mapActions**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapActionsObjectReturn`](pinia.md#_mapactionsobjectreturn)<`A`, `KeyMapper`\>
+▸ **mapActions**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapActionsObjectReturn`](pinia.md#_MapActionsObjectReturn)<`A`, `KeyMapper`\>
 
 Дозволяє безпосередньо використовувати дії з вашого сховища без використання 
 композиційного API (`setup()`), генеруючи об'єкт для використання в полі `methods`
@@ -736,8 +756,8 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 | `KeyMapper` | extends `Record`<`string`, keyof `A`\> |
 
@@ -750,7 +770,7 @@ ___
 
 #### Повертає
 
-[`_MapActionsObjectReturn`](pinia.md#_mapactionsobjectreturn)<`A`, `KeyMapper`\>
+[`_MapActionsObjectReturn`](pinia.md#_MapActionsObjectReturn)<`A`, `KeyMapper`\>
 
 **`Приклад`**
 
@@ -769,7 +789,7 @@ export default {
 }
 ```
 
-▸ **mapActions**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapActionsReturn`](pinia.md#_mapactionsreturn)<`A`\>
+▸ **mapActions**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapActionsReturn`](pinia.md#_MapActionsReturn)<`A`\>
 
 Дозволяє безпосередньо використовувати дії з вашого сховища без використання композиційного
 API (`setup()`), генеруючи об’єкт для розширення в полі `methods`
@@ -780,8 +800,8 @@ API (`setup()`), генеруючи об’єкт для розширення в
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 
 #### Параметри
@@ -793,7 +813,7 @@ API (`setup()`), генеруючи об’єкт для розширення в
 
 #### Повертає
 
-[`_MapActionsReturn`](pinia.md#_mapactionsreturn)<`A`\>
+[`_MapActionsReturn`](pinia.md#_MapActionsReturn)<`A`\>
 
 **`Приклад`**
 
@@ -815,7 +835,7 @@ ___
 
 ### mapGetters
 
-▸ **mapGetters**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapStateObjectReturn`](pinia.md#_mapstateobjectreturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
+▸ **mapGetters**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapStateObjectReturn`](pinia.md#_MapStateObjectReturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
 
 Псевдонім для `mapState()`. Ви повинні використовувати `mapState()` натомість.
 
@@ -824,10 +844,10 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
-| `KeyMapper` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#store)<`Id`, `S`, `G`, `A`\>) => `any`\> |
+| `KeyMapper` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#Store)<`Id`, `S`, `G`, `A`\>) => `any`\> |
 
 #### Параметри
 
@@ -838,13 +858,13 @@ ___
 
 #### Повертає
 
-[`_MapStateObjectReturn`](pinia.md#_mapstateobjectreturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
+[`_MapStateObjectReturn`](pinia.md#_MapStateObjectReturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
 
 **`Заборонено`**
 
 використовуй `mapState()` натомість.
 
-▸ **mapGetters**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): [`_MapStateReturn`](pinia.md#_mapstatereturn)<`S`, `G`, `Keys`\>
+▸ **mapGetters**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): [`_MapStateReturn`](pinia.md#_MapStateReturn)<`S`, `G`, `Keys`\>
 
 Псевдонім для `mapState()`. Ви повинні використовувати `mapState()` натомість.
 
@@ -853,8 +873,8 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 | `Keys` | extends `string` \| `number` \| `symbol` |
 
@@ -867,7 +887,7 @@ ___
 
 #### Повертає
 
-[`_MapStateReturn`](pinia.md#_mapstatereturn)<`S`, `G`, `Keys`\>
+[`_MapStateReturn`](pinia.md#_MapStateReturn)<`S`, `G`, `Keys`\>
 
 **`Заборонено`**
 
@@ -877,7 +897,7 @@ ___
 
 ### mapState
 
-▸ **mapState**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapStateObjectReturn`](pinia.md#_mapstateobjectreturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
+▸ **mapState**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapStateObjectReturn`](pinia.md#_MapStateObjectReturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
 
 Дозволяє використовувати стан та гетери з одного сховища без використання 
 композиційного API (`setup()`), генеруючи об'єкт для розширення
@@ -892,10 +912,10 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
-| `KeyMapper` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#store)<`Id`, `S`, `G`, `A`\>) => `any`\> |
+| `KeyMapper` | extends `Record`<`string`, keyof `S` \| keyof `G` \| (`store`: [`Store`](pinia.md#Store)<`Id`, `S`, `G`, `A`\>) => `any`\> |
 
 #### Параметри
 
@@ -906,7 +926,7 @@ ___
 
 #### Повертає
 
-[`_MapStateObjectReturn`](pinia.md#_mapstateobjectreturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
+[`_MapStateObjectReturn`](pinia.md#_MapStateObjectReturn)<`Id`, `S`, `G`, `A`, `KeyMapper`\>
 
 **`Приклад`**
 
@@ -933,7 +953,7 @@ export default {
 }
 ```
 
-▸ **mapState**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): [`_MapStateReturn`](pinia.md#_mapstatereturn)<`S`, `G`, `Keys`\>
+▸ **mapState**<`Id`, `S`, `G`, `A`, `Keys`\>(`useStore`, `keys`): [`_MapStateReturn`](pinia.md#_MapStateReturn)<`S`, `G`, `Keys`\>
 
 Дозволяє використовувати стан і геттери з одного сховища без використання композиції
 API (`setup()`), генеруючи об’єкт для розширення в полі `computed`
@@ -944,8 +964,8 @@ API (`setup()`), генеруючи об’єкт для розширення в
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 | `Keys` | extends `string` \| `number` \| `symbol` |
 
@@ -958,7 +978,7 @@ API (`setup()`), генеруючи об’єкт для розширення в
 
 #### Повертає
 
-[`_MapStateReturn`](pinia.md#_mapstatereturn)<`S`, `G`, `Keys`\>
+[`_MapStateReturn`](pinia.md#_MapStateReturn)<`S`, `G`, `Keys`\>
 
 **`Приклад`**
 
@@ -980,7 +1000,7 @@ ___
 
 ### mapStores
 
-▸ **mapStores**<`Stores`\>(`...stores`): [`_Spread`](pinia.md#_spread)<`Stores`\>
+▸ **mapStores**<`Stores`\>(`...stores`): [`_Spread`](pinia.md#_Spread)<`Stores`\>
 
 Дозволяє використовувати магазини без API композиції (`setup()`) шляхом генерації
 об’єкт, який буде розширено в полі `computed` компонента. Він приймає список
@@ -1000,7 +1020,7 @@ ___
 
 #### Повертає
 
-[`_Spread`](pinia.md#_spread)<`Stores`\>
+[`_Spread`](pinia.md#_Spread)<`Stores`\>
 
 **`Приклад`**
 
@@ -1022,7 +1042,7 @@ ___
 
 ### mapWritableState
 
-▸ **mapWritableState**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapWritableStateObjectReturn`](pinia.md#_mapwritablestateobjectreturn)<`S`, `KeyMapper`\>
+▸ **mapWritableState**<`Id`, `S`, `G`, `A`, `KeyMapper`\>(`useStore`, `keyMapper`): [`_MapWritableStateObjectReturn`](pinia.md#_MapWritableStateObjectReturn)<`S`, `KeyMapper`\>
 
 Те саме, що й `mapState()`, але створює також обчислювані сетери, щоб стан 
 можна було змінювати. На відміну від `mapState()`, можна додавати лише 
@@ -1033,8 +1053,8 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 | `KeyMapper` | extends `Record`<`string`, keyof `S`\> |
 
@@ -1047,7 +1067,7 @@ ___
 
 #### Повертає
 
-[`_MapWritableStateObjectReturn`](pinia.md#_mapwritablestateobjectreturn)<`S`, `KeyMapper`\>
+[`_MapWritableStateObjectReturn`](pinia.md#_MapWritableStateObjectReturn)<`S`, `KeyMapper`\>
 
 ▸ **mapWritableState**<`Id`, `S`, `G`, `A`\>(`useStore`, `keys`): [`_MapWritableStateReturn`](pinia.md#_mapwritablestatereturn)<`S`\>
 
@@ -1060,8 +1080,8 @@ ___
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](pinia.md#statetree) |
-| `G` | extends [`_GettersTree`](pinia.md#_getterstree)<`S`\> |
+| `S` | extends [`StateTree`](pinia.md#StateTree) |
+| `G` | extends [`_GettersTree`](pinia.md#_GettersTree)<`S`\> |
 | `A` | `A` |
 | `Keys` | extends `string` \| `number` \| `symbol` |
 
@@ -1188,7 +1208,7 @@ ___
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `SS` | extends [`_StoreWithState`](../interfaces/pinia._StoreWithState.md)<`string`, [`StateTree`](pinia.md#statetree), [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, [`_ActionsTree`](pinia.md#_actionstree), `SS`\> & [`StateTree`](pinia.md#statetree) & [`_StoreWithGetters`](pinia.md#_storewithgetters)<[`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>\> & [`PiniaCustomProperties`](../interfaces/pinia.PiniaCustomProperties.md)<`string`, [`StateTree`](pinia.md#statetree), [`_GettersTree`](pinia.md#_getterstree)<[`StateTree`](pinia.md#statetree)\>, [`_ActionsTree`](pinia.md#_actionstree), `SS`\> & [`PiniaCustomStateProperties`](../interfaces/pinia.PiniaCustomStateProperties.md)<[`StateTree`](pinia.md#statetree), `SS`\> |
+| `SS` | extends [`StoreGeneric`](pinia.md#StoreGeneric) |
 
 #### Параметри
 

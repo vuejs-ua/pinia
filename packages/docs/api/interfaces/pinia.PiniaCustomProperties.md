@@ -15,6 +15,6 @@ editLink: false
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` = `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
-| `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
-| `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
+| `S` | extends [`StateTree`](../modules/pinia.md#StateTree) = [`StateTree`](../modules/pinia.md#StateTree) |
+| `G` | [`_GettersTree`](../modules/pinia.md#_GettersTree)<`S`\> |
+| `A` | [`_ActionsTree`](../modules/pinia.md#_ActionsTree) |

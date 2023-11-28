@@ -8,7 +8,7 @@ editLink: false
 
 [pinia](../modules/pinia.md)._StoreOnActionListenerContext
 
-Актуальний тип для [StoreOnActionListenerContext](../modules/pinia.md#storeonactionlistenercontext). Використовується для рефакторингу.
+Актуальний тип для [StoreOnActionListenerContext](../modules/pinia.md#StoreOnActionListenerContext). Використовується для рефакторингу.
 **Лише** для внутрішнього використання
 
 ## Типи параметрів
@@ -23,7 +23,7 @@ editLink: false
 
 ### after
 
-• **after**: (`callback`: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void`) => `void`
+• **after**: (`callback`: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_Method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_Awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void`) => `void`
 
 #### Оголошення типу
 
@@ -36,7 +36,7 @@ editLink: false
 
 | Ім'я | Тип |
 | :------ | :------ |
-| `callback` | `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void` |
+| `callback` | `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_Method)\> ? (`resolvedReturn`: [`_Awaited`](../modules/pinia.md#_Awaited)<`ReturnType`<`A`[`ActionName`]\>\>) => `void` : () => `void` |
 
 ##### Повертає
 
@@ -46,7 +46,7 @@ ___
 
 ### args
 
-• **args**: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_method)\> ? `Parameters`<`A`[`ActionName`]\> : `unknown`[]
+• **args**: `A` extends `Record`<`ActionName`, [`_Method`](../modules/pinia.md#_Method)\> ? `Parameters`<`A`[`ActionName`]\> : `unknown`[]
 
 Параметри, що передаються в дію
 
