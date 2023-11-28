@@ -15,7 +15,7 @@ editLink: false
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) |
+| `S` | extends [`StateTree`](../modules/pinia.md#StateTree) |
 | `G` | `G` |
 | `A` | `A` |
 
@@ -57,7 +57,7 @@ ___
 
 #### Наслідується від
 
-[StoreProperties](pinia.StoreProperties.md).[_customProperties](pinia.StoreProperties.md#_customproperties)
+[StoreProperties](pinia.StoreProperties.md).[_customProperties](pinia.StoreProperties.md#_customProperties)
 
 ## Методи
 
@@ -98,7 +98,7 @@ ___
 
 | Ім'я | Тип | Опис                                                      |
 | :------ | :------ |:----------------------------------------------------------|
-| `callback` | [`StoreOnActionListener`](../modules/pinia.md#storeonactionlistener)<`Id`, `S`, `G`, `A`\> | функція зворотного виклику, що викликається перед кожною дією                       |
+| `callback` | [`StoreOnActionListener`](../modules/pinia.md#StoreOnActionListener)<`Id`, `S`, `G`, `A`\> | функція зворотного виклику, що викликається перед кожною дією                       |
 | `detached?` | `boolean` | видаляє підписку з контексту, в якому вона була викликана |
 
 #### Повертає
@@ -157,7 +157,7 @@ ___
 
 | Ім'я | Тип | Опис |
 | :------ | :------ | :------ |
-| `partialState` | [`_DeepPartial`](../modules/pinia.md#_deeppartial)<`UnwrapRef`<`S`\>\> | патч для застосування до стану |
+| `partialState` | [`_DeepPartial`](../modules/pinia.md#_DeepPartial)<`UnwrapRef`<`S`\>\> | патч для застосування до стану |
 
 #### Повертає
 
@@ -212,7 +212,7 @@ ___
 
 | Ім'я | Тип | Опис                                                                                                                                                                                      |
 | :------ | :------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `callback` | [`SubscriptionCallback`](../modules/pinia.md#subscriptioncallback)<`S`\> | функція зворотного виклику, що передається до спостерігача                                                                                                                                |
+| `callback` | [`SubscriptionCallback`](../modules/pinia.md#SubscriptionCallback)<`S`\> | функція зворотного виклику, що передається до спостерігача                                                                                                                                |
 | `options?` | { `detached?`: `boolean`  } & `WatchOptions`<`boolean`\> | опції `watch` та `detached` для видалення підписки з контексту (зазвичай компонента), в якому її було викликано. Зверніть увагу, що опція `flush` не впливає на виклики `store.$patch()`. |
 
 #### Повертає

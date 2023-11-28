@@ -124,6 +124,7 @@ const store = useCounterStore()
 
 ```vue
 <script setup>
+import { useCounterStore } from '@/stores/counter'
 const store = useCounterStore()
 // ❌ Це не спрацює, оскільки порушує реактивність
 // це те ж саме, що і деструктуризація з `реквізитів`
@@ -147,6 +148,7 @@ const doubleValue = computed(() => store.doubleCount)
 
 ```vue
 <script setup>
+import { useCounterStore } from '@/stores/counter'
 import { storeToRefs } from 'pinia'
 
 const store = useCounterStore()

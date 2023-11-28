@@ -15,15 +15,21 @@ editLink: false
 | Ім'я | Тип |
 | :------ | :------ |
 | `Id` | extends `string` = `string` |
-| `S` | extends [`StateTree`](../modules/pinia.md#statetree) = [`StateTree`](../modules/pinia.md#statetree) |
-| `G` | [`_GettersTree`](../modules/pinia.md#_getterstree)<`S`\> |
-| `A` | [`_ActionsTree`](../modules/pinia.md#_actionstree) |
+| `S` | extends [`StateTree`](../modules/pinia.md#StateTree) = [`StateTree`](../modules/pinia.md#StateTree) |
+| `G` | [`_GettersTree`](../modules/pinia.md#_GettersTree)<`S`\> |
+| `A` | [`_ActionsTree`](../modules/pinia.md#_ActionsTree) |
+
+## Hierarchy
+
+- **`StoreDefinition`**
+
+  ↳ [`SetupStoreDefinition`](pinia.SetupStoreDefinition.md)
 
 ## Викликається
 
 ### StoreDefinition
 
-▸ **StoreDefinition**(`pinia?`, `hot?`): [`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
+▸ **StoreDefinition**(`pinia?`, `hot?`): [`Store`](../modules/pinia.md#Store)<`Id`, `S`, `G`, `A`\>
 
 Повертає сховище, створює його, якщо потрібно.
 
@@ -32,11 +38,11 @@ editLink: false
 | Ім'я | Тип | Опис                                    |
 | :------ | :------ |:----------------------------------------|
 | `pinia?` | ``null`` \| [`Pinia`](pinia.Pinia.md)               | Екземпляр Pinia для отримання сховища |
-| `hot?` | [`StoreGeneric`](../modules/pinia.md#storegeneric) | лише для розробки, гаряча заміна модуля |
+| `hot?` | [`StoreGeneric`](../modules/pinia.md#StoreGeneric) | лише для розробки, гаряча заміна модуля |
 
 #### Повертає
 
-[`Store`](../modules/pinia.md#store)<`Id`, `S`, `G`, `A`\>
+[`Store`](../modules/pinia.md#Store)<`Id`, `S`, `G`, `A`\>
 
 ## Властивості
 

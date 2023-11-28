@@ -9,7 +9,7 @@ Pinia підтримує гарячу заміна модулів, тож ви �
 // auth.js
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
-const useAuth = defineStore('auth', {
+export const useAuth = defineStore('auth', {
   // параметри...
 })
 

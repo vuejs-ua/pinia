@@ -157,15 +157,27 @@ expect(store.someAction).toHaveBeenCalledTimes(1)
 
 ### Визначення функції createSpy
 
-Якщо використовується Jest або vitest із `globals: true`, `createTestingPinia` автоматично робить дії заглушками за допомогою наглядацької функції на основі існуючої тестової структури (`jest.fn` або `vitest.fn`). Якщо ви використовуєте іншу фреймворк, вам потрібно буде надати опцію [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy):
+Якщо використовується Jest або vitest із `globals: true`, `createTestingPinia` автоматично робить дії заглушками за допомогою наглядацької функції на основі існуючої тестової структури (`jest.fn` або `vitest.fn`). Якщо ви не використовуєте `globals: true` або ж використовуєте іншу фреймворк, вам потрібно буде надати опцію [createSpy](/api/interfaces/pinia_testing.TestingOptions.html#createspy):
 
-```js
+::: code-group
+```ts [vitest]
+// NOTE: not needed with `globals: true`
+import { vi } from 'vitest'
+
+createTestingPinia({
+  createSpy: vi.fn,
+})
+```
+
+```ts [sinon]
 import sinon from 'sinon'
 
 createTestingPinia({
-  createSpy: sinon.spy, // використовуйте наглядача sinon для обгортання дій
+  createSpy: sinon.spy,
 })
 ```
+
+:::
 
 Ви можете знайти більше прикладів у [тестах пакету тестування](https://github.com/vuejs/pinia/blob/v2/packages/testing/src/testing.spec.ts).
 

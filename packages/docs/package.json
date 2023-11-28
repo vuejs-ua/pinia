@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "docs": "vitepress dev .",
-    "docs:api": "node run-typedoc.cjs",
+    "docs:api": "node run-typedoc.mjs",
     "docs:build": "vitepress build ."
   },
   "dependencies": {
-    "@chenfengyuan/vue-countdown": "^2.1.0",
-    "@vueuse/core": "^10.1.2",
+    "@chenfengyuan/vue-countdown": "^2.1.2",
+    "@vueuse/core": "^10.5.0",
     "pinia": "workspace:^2.0.18",
-    "vitepress": "1.0.0-beta.7"
+    "vitepress": "1.0.0-rc.24"
   }
 }

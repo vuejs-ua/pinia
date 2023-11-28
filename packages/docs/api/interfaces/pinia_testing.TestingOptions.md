@@ -59,7 +59,7 @@ ___
 
 ### initialState
 
-• `Опціональний` **initialState**: [`StateTree`](../modules/pinia.md#statetree)
+• `Опціональний` **initialState**: [`StateTree`](../modules/pinia.md#StateTree)
 
 Дозволяє визначити частковий початковий стан всіх ваших сховищ. Цей стан 
 застосовується після створення сховища, дозволяючи вам встановити лише 
